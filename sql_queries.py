@@ -54,7 +54,7 @@ staging_songs_table_create = ("""
         artist_longitude DECIMAL(9) NULL,
         artist_location VARCHAR NULL,
         artist_name VARCHAR NULL,
-        song_id VARCHAR NOT NULL SORTKEY DISTKEY,
+        song_id VARCHAR NULL SORTKEY DISTKEY,
         title VARCHAR NULL,
         duration DECIMAL(9) NULL,
         year INTEGER NULL
@@ -63,7 +63,7 @@ staging_songs_table_create = ("""
 
 songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays (
-        songplay_id INTEGER IDENTITY(0,1) NOT NULL SORTKEY,
+        songplay_id INTEGER PRIMARY KEY SORTKEY,
         start_time TIMESTAMP NOT NULL,
         user_id VARCHAR NOT NULL,
         level VARCHAR NOT NULL,
@@ -77,7 +77,7 @@ songplay_table_create = ("""
 
 user_table_create = ("""
     CREATE TABLE IF NOT EXISTS users (
-        user_id INTEGER IDENTITY(0,1) NOT NULL SORTKEY,
+        user_id INTEGER PRIMARY KEY SORTKEY,
         first_name VARCHAR NULL,
         last_name VARCHAR NULL,
         gender VARCHAR(1) NULL,
@@ -87,7 +87,7 @@ user_table_create = ("""
 
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
-        song_id VARCHAR IDENTITY(0,1) NOT NULL SORTKEY DISTKEY,
+        song_id VARCHAR PRIMARY KEY SORTKEY DISTKEY,
         title VARCHAR NOT NULL,
         artist_id VARCHAR NOT NULL,
         year INTEGER NOT NULL,
@@ -97,7 +97,7 @@ song_table_create = ("""
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists (
-        artist_id VARCHAR IDENTITY(0,1) NOT NULL SORTKEY,
+        artist_id VARCHAR PRIMARY KEY SORTKEY,
         name VARCHAR NULL,
         location VARCHAR NULL,
         latitude DECIMAL(9) NULL,
@@ -107,7 +107,7 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time TIMESTAMP IDENTITY(0,1) NOT NULL SORTKEY,
+        start_time TIMESTAMP PRIMARY KEY SORTKEY,
         hour SMALLINT NULL,
         day SMALLINT NULL,
         week SMALLINT NULL,
