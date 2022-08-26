@@ -27,6 +27,14 @@ All these 3 variables are provided to us when we launch the cloud gateway.
 
 We also need to choose the database name, user and password, and update the **dwh.cfg** file.
 
+```
+[DB]
+HOST=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_PORT=5439
+```
 
 ## Usage
 
