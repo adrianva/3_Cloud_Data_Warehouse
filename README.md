@@ -63,7 +63,7 @@ An error occurred (InvalidPermission.Duplicate) when calling the AuthorizeSecuri
 
 ```
 
-We need to write down both the IAM Role ARN and the cluster endpoint (arn:aws:iam::712737122592:role/dwhRole and dwhcluster.c8w1fd3esnxj.us-west-2.redshift.amazonaws.com in this case) and update the **dwh.cfg**file accordingly.
+We need to write down both the IAM Role ARN and the cluster endpoint (arn:aws:iam::712737122592:role/dwhRole and dwhcluster.c8w1fd3esnxj.us-west-2.redshift.amazonaws.com in this case) and update the **dwh.cfg** file accordingly.
 
 * `DB/HOST`
 * `IAM_ROLE/ARN`
