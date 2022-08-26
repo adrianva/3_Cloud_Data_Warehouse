@@ -77,7 +77,7 @@ songplay_table_create = ("""
 
 user_table_create = ("""
     CREATE TABLE IF NOT EXISTS users (
-        user_id INTEGER NOT NULL SORTKEY,
+        user_id INTEGER IDENTITY(0,1) NOT NULL SORTKEY,
         first_name VARCHAR NULL,
         last_name VARCHAR NULL,
         gender VARCHAR(1) NULL,
@@ -87,7 +87,7 @@ user_table_create = ("""
 
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
-        song_id VARCHAR NOT NULL SORTKEY DISTKEY,
+        song_id VARCHAR IDENTITY(0,1) NOT NULL SORTKEY DISTKEY,
         title VARCHAR NOT NULL,
         artist_id VARCHAR NOT NULL,
         year INTEGER NOT NULL,
@@ -97,7 +97,7 @@ song_table_create = ("""
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists (
-        artist_id VARCHAR NOT NULL SORTKEY,
+        artist_id VARCHAR IDENTITY(0,1) NOT NULL SORTKEY,
         name VARCHAR NULL,
         location VARCHAR NULL,
         latitude DECIMAL(9) NULL,
@@ -107,7 +107,7 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time TIMESTAMP NOT NULL SORTKEY,
+        start_time TIMESTAMP IDENTITY(0,1) NOT NULL SORTKEY,
         hour SMALLINT NULL,
         day SMALLINT NULL,
         week SMALLINT NULL,
