@@ -141,6 +141,12 @@ def wait_for_cluster_status(redshift, status: str) -> None:
 
 
 def open_tcp_port(ec2, vpc_id: str) -> None:
+    """
+    Allows the cluster to be accessed from any IP address
+    
+    :param ec2: EC2 resource
+    :param vpc_id: Redshift Cluster's VPC ID
+    """
     try:
         vpc = ec2.Vpc(id=vpc_id)
         default_sg = list(vpc.security_groups.all())[0]
